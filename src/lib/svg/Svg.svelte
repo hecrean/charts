@@ -43,7 +43,10 @@
   <defs>
     <slot name="defs" />
   </defs>
-  <g bind:this={innerElement}>
+  <g
+    bind:this={innerElement}
+    transform="translate({margins.left}, {margins.top})"
+  >
     <slot {svgEl} />
   </g>
 </svg>
