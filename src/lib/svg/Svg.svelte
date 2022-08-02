@@ -11,11 +11,6 @@
   export let layerZIndex: number;
   export let pointerEventsOn: boolean;
 
-  /**  The layer's `<svg>` tag. */
-  let svgEl: SVGElementTagNameMap["svg"];
-  /** The layer's `<g>` tag. */
-  let innerElement: SVGElementTagNameMap["g"];
-
   type T = $$Generic;
 
   const {
@@ -33,7 +28,6 @@
 </script>
 
 <svg
-  bind:this={svgEl}
   viewBox="0 0 {$containerWidth} {$containerHeight}"
   width={$containerWidth}
   height={$containerHeight}
@@ -43,12 +37,7 @@
   <defs>
     <slot name="defs" />
   </defs>
-  <g
-    bind:this={innerElement}
-    transform="translate({margins.left}, {margins.top})"
-  >
-    <slot {svgEl} />
-  </g>
+  <slot />
 </svg>
 
 <style>

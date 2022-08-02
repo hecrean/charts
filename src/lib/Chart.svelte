@@ -59,14 +59,6 @@
       .range([$containerHeight - margins.bottom, margins.top])
   );
 
-  // const xScale = derived(innerWidth, ($innerWidth) =>
-  //   scaleLinear().domain(extent(data, xAccessor)).range([0, $innerWidth])
-  // );
-
-  // const yScale = derived(innerHeight, ($innerHeight) =>
-  //   scaleLinear().domain(extent(data, yAccessor)).range([$innerHeight, 0])
-  // );
-
   let categories = Array.from(new Set([...data].map((d) => d[categoryKey])));
   let colorScale = scaleOrdinal().domain(categories).range(colors);
 
@@ -119,7 +111,6 @@
     box-sizing: border-box;
   }
   .chart-container {
-    background-color: green;
     width: 100%;
     height: 100%;
     position: relative;

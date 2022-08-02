@@ -18,6 +18,11 @@
     colorScale,
     categoryKey,
   } = getContext<ChartCtx<Datum>>(chartCtxKey);
+
+  console.log(data);
+
+  console.log(data);
+  console.log(yAccessor(data[0], 0, data));
 </script>
 
 <g>
@@ -26,7 +31,7 @@
       r="3"
       cx={$xScale(xAccessor(datum, i, data))}
       cy={$yScale(yAccessor(datum, i, data))}
-      fill={colorScale ? colorScale(datum[categoryKey]) : "black"}
+      fill={"red"}
     />
   {/each}
 </g>
